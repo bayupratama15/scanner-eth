@@ -1,0 +1,258 @@
+<!--
+=========================================================
+* Argon Dashboard 2 - v2.0.4
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/argon-dashboard
+* Copyright 2022 Creative Tim (https://www.creative-tim.com)
+* Licensed under MIT (https://www.creative-tim.com/license)
+* Coded by Creative Tim
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="./assets/img/favicon.png">
+  <title>
+    Scanner
+  </title>
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+  <!-- Nucleo Icons -->
+  <link href="./assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+  <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
+  <!-- CSS Files -->
+  <link id="pagestyle" href="./assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="
+https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js
+"></script>
+</head>
+
+<body class="g-sidenav-show   bg-gray-100">
+  <div class="min-height-300 bg-primary position-absolute w-100"></div>
+
+  <main class="main-content position-relative border-radius-lg ">
+    <!-- End Navbar -->
+    <div class="container-fluid py-4">
+      <div class="row">
+        <div class="col-xl-12 col-md-12 col-sm-12 mb-xl-0 mb-4">
+          <div class="card">
+            <div class="card-body p-3">
+              <!-- form input -->
+              <div class="form-group">
+                <label for="checkToken">Check Tokens Address</label>
+                <input type="text" class="form-control" id="addressTokens" aria-describedby="checkTokenHelp"
+                  value="0x6b7514e5161e13196ad12b1398ac15cdc4796a3a"
+                  placeholder="Enter the address to check the tokens">
+                <small id="checkTokenHelp" class="form-text text-muted"> </small>
+              </div>
+              <!-- button check tokens -->
+              <button type="button" class="btn btn-primary" id="checkTokenBtn">Check Tokens</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-lg-4 mb-lg-0 mb-4">
+          <div class="card z-index-2 h-100">
+            <div class="card-header pb-0 pt-3 bg-transparent">
+              <h6 class="text-capitalize">Information Tokens</h6>
+            </div>
+            <div class="card-body p-3">
+              <div class="form-group">
+                <label for="checkToken">Name</label>
+                <input type="text" class="form-control" id="nameToken" aria-describedby="checkTokenHelp" disabled>
+              </div>
+              <div class="form-group">
+                <label for="symbolToken">Symbol</label>
+                <input type="text" class="form-control" id="symbolToken" aria-describedby="symbolTokenHelp" disabled>
+              </div>
+              <div class="form-group">
+                <label for="decimalsToken">Decimals</label>
+                <input type="text" class="form-control" id="decimalsToken" aria-describedby="decimalsTokenHelp"
+                  disabled>
+              </div>
+              <div class="form-group">
+                <label for="creatorsToken">Creators</label>
+                <input type="text" class="form-control" id="creatorsToken" aria-describedby="creatorsTokenHelp"
+                  disabled>
+              </div>
+              <div class="form-group">
+                <label for="creationDate">Creation Date</label>
+                <input type="text" class="form-control" id="creationDate" aria-describedby="creationDateHelp" disabled>
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-xl-6 col-sm-12" id="linkTg">
+
+                </div>
+                <div class="col-md-6 col-xl-6 col-sm-12" id="linkTwitter">
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="card z-index-2 h-100">
+            <!-- table looping dataCheckerTokens -->
+            <div class="card-header pb-0 pt-3 bg-transparent">
+              <h6 class="text-capitalize">Data Checker Tokens</h6>
+            </div>
+            <!-- table -->
+            <div class="card-body p-3">
+              <div class="table-responsive">
+                <table class="table align-items-center mb-0">
+                  <thead class="thead-light">
+                    <tr>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Message</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Level</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tableCheckerTokens">
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <footer class="footer pt-3  ">
+          <div class="container-fluid">
+            <div class="row align-items-center justify-content-lg-between">
+              <div class="col-lg-6 mb-lg-0 mb-4">
+                <div class="copyright text-center text-sm text-muted text-lg-start">
+                  ©
+                  <script>
+                    document.write(new Date().getFullYear())
+                  </script>,
+                  made with <i class="fa fa-heart"></i> by
+                  <a href="#" class="font-weight-bold" target="_blank">Scanner</a>
+                  for a avoid scam.
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </footer>
+      </div>
+  </main>
+
+  <!--   Core JS Files   -->
+  <script src="./assets/js/core/popper.min.js"></script>
+  <script src="./assets/js/core/bootstrap.min.js"></script>
+  <script src="./assets/js/plugins/perfect-scrollbar.min.js"></script>
+  <script src="./assets/js/plugins/smooth-scrollbar.min.js"></script>
+  <script src="./assets/js/plugins/chartjs.min.js"></script>
+  <script>
+    const informationTokens = [];
+    async function checkTokens() {
+      const address = $("#addressTokens").val();
+      await $.ajax({
+        url: "http://127.0.0.1:8000/api/public/check-tokens-eth",
+        data: {
+          address: address
+        },
+        type: "GET",
+        dataType: "json",
+        success: function (data) {
+          this.informationTokens = data.token;
+          console.log(this.informationTokens.address);
+          $("#nameToken").val(this.informationTokens.name);
+          $("#symbolToken").val(this.informationTokens.symbol);
+          $("#decimalsToken").val(this.informationTokens.decimals);
+          $("#creatorsToken").val(this.informationTokens.creator);
+          var date = new Date(this.informationTokens.creationDate * 1000);
+          $("#creationDate").val(moment(date).format('DD MMMM YYYY'));
+
+          $("#linkTg").append(`<a class='btn btn-primary w-100 mb-2' href="${this.informationTokens.links[0]}">Telegram</a>`);
+          $("#linkTwitter").append(`<a  class='btn btn-primary w-100 mb-2' href="${this.informationTokens.links[1]}">Twitter</a>`);
+          this.informationTokens.checks.forEach(element => {
+
+            if (element.level == 2) {
+              $("#tableCheckerTokens").append(`
+            <tr >
+              <td class="align-middle  text-md">
+                <span class="badge badge-sm bg-gradient-danger">${element.type}</span>
+              </td>
+              <td class="align-middle  text-md">
+                <span class="badge badge-sm bg-gradient-danger">${element.message}</span>
+              </td>
+              <td class="align-middle  text-sm">
+                <span class="badge badge-sm bg-gradient-danger">${element.level}</span>
+              </td>
+            </tr>
+            `);
+            } else {
+              $("#tableCheckerTokens").append(`
+              <tr >
+              <td class="align-middle  text-md">
+                <span class="badge badge-sm bg-gradient-success">${element.type}</span>
+              </td>
+              <td class="align-middle  text-md">
+                <span class="badge badge-sm bg-gradient-success">${element.message}</span>
+              </td>
+              <td class="align-middle  text-sm">
+                <span class="badge badge-sm bg-gradient-success">${element.level}</span>
+              </td>
+            </tr>
+            `);
+            }
+
+          });
+
+
+        }
+      });
+    }
+
+    $("#checkTokenBtn").click(function () {
+      checkTokens();
+    });
+
+
+
+  </script>
+  <script>
+    var win = navigator.platform.indexOf('Win') > -1;
+    if (win && document.querySelector('#sidenav-scrollbar')) {
+      var options = {
+        damping: '0.5'
+      }
+      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+    }
+  </script>
+  <!-- Github buttons -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="./assets/js/argon-dashboard.min.js?v=2.0.4"></script>
+</body>
+<style>
+  th {
+    text-transform: uppercase;
+
+  }
+
+  .bg-danger {
+    color: white;
+  }
+
+  .bg-success {
+    color: white;
+  }
+</style>
+
+</html>
