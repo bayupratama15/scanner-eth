@@ -19,9 +19,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="./assets/img/favicon.png">
+  <link rel="icon" type="image/png" href="./assets/img/logo.png">
   <title>
-    Scanner
+    Scanner Bone
   </title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -44,6 +44,17 @@ https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js
   <div class="min-height-300 bg-primary position-absolute w-100"></div>
 
   <main class="main-content position-relative border-radius-lg ">
+    <!-- Navbar -->
+    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur"
+      data-scroll="false">
+      <div class="container-fluid py-1 px-3">
+        <!-- img logo -->
+        <a class="navbar-brand font-weight-bold ms-lg-0 ms-3 text-white" href="javascript:;">
+          <img src="./assets/img/logo.png" alt="logo" class="img-fluid" style="width: 50px;">
+          <span class="ms-1 font-weight-bold">Scanner Bone</span>
+        </a>
+      </div>
+    </nav>
     <!-- End Navbar -->
     <div class="container-fluid py-4">
       <div class="row">
@@ -162,7 +173,7 @@ https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js
     async function checkTokens() {
       const address = $("#addressTokens").val();
       await $.ajax({
-        url: "http://127.0.0.1:8000/api/public/check-tokens-eth",
+        url: "https://api.lynxcoin.io/api/public/check-tokens-eth",
         data: {
           address: address
         },
@@ -252,6 +263,10 @@ https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js
 
   .bg-success {
     color: white;
+  }
+
+  .bg-primary-custom {
+    background-color: #03011a !important;
   }
 </style>
 
