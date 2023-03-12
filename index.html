@@ -40,7 +40,7 @@ https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js
 "></script>
 </head>
 
-<body class="g-sidenav-show  bg-gray-100">
+<body class="g-sidenav-show  bg-gray-100" oncontextmenu="return false">
   <div class="min-height-300 bg-primary-custom position-absolute w-100"></div>
 
   <main class="main-content position-relative border-radius-lg ">
@@ -64,8 +64,7 @@ https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js
               <!-- form input -->
               <div class="form-group">
                 <label for="checkToken">Check Tokens Address</label>
-                <input type="text" class="form-control" id="addressTokens" aria-describedby="checkTokenHelp"
-                  value="0x6b7514e5161e13196ad12b1398ac15cdc4796a3a"
+                <input type="text" class="form-control" id="addressTokens" aria-describedby="checkTokenHelp" value=""
                   placeholder="Enter the address to check the tokens">
                 <small id="checkTokenHelp" class="form-text text-muted"> </small>
               </div>
@@ -233,6 +232,24 @@ https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js
     $("#checkTokenBtn").click(function () {
       checkTokens();
     });
+
+    // disable inspect element
+    document.addEventListener('contextmenu', event => event.preventDefault());
+
+    document.onkeydown = function (e) {
+      if (event.keyCode == 123) {
+        return false;
+      }
+      if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+        return false;
+      }
+      if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+        return false;
+      }
+      if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+        return false;
+      }
+    }
 
 
 
